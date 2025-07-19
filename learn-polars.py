@@ -30,7 +30,7 @@ weather_readings
 
 
 # CONSTRUCT A POLARS SERIES ------------------------------------------------------------------------
-# A Series represents a single column in a Polars DataFrame.
+# A Series represents a single column/row in a Polars DataFrame.
 
 # pl.Series(name, values, dtype, strict = True)
 pl.Series(name = "a", values = [1, 2, 3])
@@ -111,6 +111,13 @@ df2.tail()
 pl.read_csv('/workspaces/learn-polars/data/all_stocks.csv', n_rows= 3)
 
 # read from 100th onwards rows
-pl.read_csv('/workspaces/learn-polars/data/all_stocks.csv', skip_rows= 100)
+pl.read_csv('/workspaces/learn-polars/data/all_stocks.csv', skip_rows= 100).write_csv('temp.csv')
+
+
+
+pl.read_parquet('/workspaces/learn-polars/data/simul/sim_rtds_combined-1.parquet')
+
+
+
 
 
